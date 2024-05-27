@@ -1,5 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import EmployeeSite from "./components/EmployeeSite.vue";
+</script>
 
-<template></template>
+<template>
+  <EmployeeSite></EmployeeSite>
+</template>
 
 <style scoped></style>
