@@ -2,6 +2,7 @@
 import type { IEmployeeState } from "@/models/IEmployeeState";
 import { allEmployeeData } from "@/services/EmployeeService";
 import { onMounted, ref } from "vue";
+import Employees from "./Employees.vue";
 
 const employeeState = ref<IEmployeeState>({
   page: 1,
@@ -17,6 +18,8 @@ onMounted(async () => {
 });
 </script>
 
-<template></template>
+<template>
+  <Employees :data="employeeState.data"></Employees>
+</template>
 
 <style scoped></style>
