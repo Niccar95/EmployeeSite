@@ -14,6 +14,7 @@ const props = defineProps<paginationProp>();
 const emit = defineEmits<{
   (e: "changePage", page: number): void;
 }>();
+
 const handlePrevPage = () => {
   if (props.page > 1) {
     emit("changePage", props.page - 1);
@@ -29,7 +30,7 @@ const handleNextPage = () => {
 <template>
   <div class="pagination">
     <button @click="handlePrevPage" :disabled="props.page === 1">
-      Previous
+      Previous Page
     </button>
     <span>Page {{ props.page }} of {{ props.total_pages }}</span>
     <button
