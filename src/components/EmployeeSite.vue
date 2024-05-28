@@ -19,6 +19,7 @@ onMounted(async () => {
 </script>
 
 <template>
+  <h1>Meet our Team</h1>
   <Employees :data="employeeState.data"></Employees>
 </template>
 
