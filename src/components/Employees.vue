@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { IEmployee } from "@/models/IEmployee";
+import Employee from "./Employee.vue";
 
 interface EmployeesProp {
   data: IEmployee[];
@@ -8,8 +9,14 @@ interface EmployeesProp {
 const props = defineProps<EmployeesProp>();
 </script>
 <template>
-  <ul>
-    <li v-for="employee in props.data">{{ employee.first_name }}</li>
-  </ul>
+  <Employee
+    :avatar="employee.avatar"
+    :email="employee.email"
+    :first_name="employee.first_name"
+    :last_name="employee.last_name"
+    :id="employee.id"
+    v-for="employee in props.data"
+    :key="employee.id"
+  ></Employee>
 </template>
 <style scoped></style>
