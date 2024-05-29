@@ -55,7 +55,7 @@ const modalOpen = ref<boolean>(false);
     </div>
   </div>
 </template>
-<style scoped>
+<style lang="scss" scoped>
 #employeeCard {
   display: flex;
   flex-direction: column;
@@ -68,7 +68,7 @@ const modalOpen = ref<boolean>(false);
   cursor: pointer;
   transition: background-color 0.2s ease;
 
-  @media screen and (min-width: 1200px) {
+  @include desktop() {
     width: 400px;
     align-items: center;
   }
