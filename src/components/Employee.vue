@@ -21,17 +21,46 @@ defineEmits<{
 }>();
 </script>
 <template>
-  <article class="employeeCard">
-    <h3>{{ props.first_name }}</h3>
-    <h4>{{ props.last_name }}</h4>
-    <img :src="props.avatar" />
-    <p>{{ props.email }}</p>
+  <article id="employeeCard">
+    <h3>{{ props.first_name + " " + props.last_name }}</h3>
+    <h4></h4>
+
+    <figure id="avatarContainer">
+      <img class="employeeAvatar" :src="props.avatar" />
+    </figure>
+
+    <h3 id="contact">
+      Contact me
+      <a :href="'mailto:' + props.email">{{ props.email }}</a>
+    </h3>
   </article>
 </template>
 <style scoped>
-.employeeCard {
-  width: 400px;
+#employeeCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  text-align: center;
   padding: 2em;
   border: solid black 1px;
+
+  @media screen and (min-width: 1200px) {
+    width: 400px;
+    align-items: center;
+  }
+
+  #avatarContainer {
+    border: solid black 5px;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+
+    .employeeAvatar {
+      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
 }
 </style>

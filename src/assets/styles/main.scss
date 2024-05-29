@@ -1,0 +1,13 @@
+@use "breakpoints";
+@import "./../styles/base.scss";
+
+#app {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  padding: 2rem;
+
+  @media screen and (min-width: 1200px) {
+    align-items: center;
+  }
+}

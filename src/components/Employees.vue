@@ -23,13 +23,20 @@ const props = defineProps<EmployeesProp>();
 </template>
 <style scoped>
 #employeeSection {
-  width: 80%;
+  width: 100%;
   border: solid black;
   padding: 2em;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 2em;
-  flex-wrap: wrap;
+
+  @media screen and (min-width: 1200px) {
+    width: 70%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2em;
+  }
 }
 </style>

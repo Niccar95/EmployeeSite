@@ -28,7 +28,7 @@ const handleNextPage = () => {
 };
 </script>
 <template>
-  <div class="pagination">
+  <section id="pagination">
     <button @click="handlePrevPage" :disabled="props.page === 1">
       Previous Page
     </button>
@@ -39,6 +39,22 @@ const handleNextPage = () => {
     >
       Next Page
     </button>
-  </div>
+  </section>
 </template>
-<style scoped></style>
+<style scoped>
+#pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media screen and (min-width: 1200px) {
+    width: 30%;
+  }
+
+  button {
+    cursor: pointer;
+    border: solid black;
+    padding: 1em;
+  }
+}
+</style>
