@@ -23,6 +23,10 @@ const handlePageChange = async (page: number) => {
 </script>
 
 <template>
+  <header>
+    <img src="./icons/original.png" />
+  </header>
+
   <h1>Meet our Team</h1>
   <Employees :data="employeeState.data"></Employees>
   <Pagination
@@ -35,4 +39,21 @@ const handlePageChange = async (page: number) => {
   ></Pagination>
 </template>
 
-<style scoped></style>
+<style scoped>
+header {
+  display: flex;
+  align-items: center;
+  gap: 5em;
+  width: 100%;
+
+  img {
+    width: 155px;
+  }
+}
+
+h1 {
+  text-align: center;
+  font-weight: 900;
+  text-transform: capitalize;
+}
+</style>

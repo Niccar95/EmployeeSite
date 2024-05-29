@@ -23,8 +23,8 @@ const props = defineProps<EmployeesProp>();
 </template>
 <style scoped>
 #employeeSection {
-  width: 100%;
-  border: solid black;
+  border: solid rgb(229, 229, 229) 1px;
+  border-radius: 1em;
   padding: 2em;
   display: flex;
   flex-direction: column;
@@ -36,7 +36,7 @@ const props = defineProps<EmployeesProp>();
     width: 70%;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 2em;
+    gap: 3em;
   }
 }
 </style>

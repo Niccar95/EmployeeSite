@@ -27,19 +27,27 @@ const modalOpen = ref<boolean>(false);
 <template>
   <article id="employeeCard" @click="modalOpen = true">
     <figure id="avatarContainer">
-      <img class="employeeAvatar" :src="props.avatar" />
+      <img class="employeeAvatar" :src="props.avatar" alt="avatar" />
     </figure>
 
     <h3>{{ props.first_name + " " + props.last_name }}</h3>
+    <img class="contactIcon" src="./icons/envelope-solid.svg" />
   </article>
 
   <div id="modalBackground" v-if="modalOpen">
     <div id="modal">
-      <figure id="modalAvatarContainer">
-        <img class="modalAvatar" :src="props.avatar" />
-      </figure>
-      <h3 id="contact">Contact me at:</h3>
-      <a :href="'mailto:' + props.email">{{ props.email }}</a>
+      <section id="infoSection">
+        <figure id="modalAvatarContainer">
+          <img class="modalAvatar" :src="props.avatar" />
+        </figure>
+
+        <section id="linkContainer">
+          <h3 id="contact">Contact me at:</h3>
+          <a class="contactLink" :href="'mailto:' + props.email">{{
+            props.email
+          }}</a>
+        </section>
+      </section>
 
       <div id="buttonContainer">
         <button class="closeButton" @click="modalOpen = false">Close</button>
@@ -51,6 +59,7 @@ const modalOpen = ref<boolean>(false);
 #employeeCard {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1em;
   text-align: center;
   padding: 2em;
@@ -90,6 +99,10 @@ const modalOpen = ref<boolean>(false);
   h3 {
     color: #5333ed;
   }
+
+  .contactIcon {
+    width: 20px;
+  }
 }
 
 #employeeCard:hover {
@@ -108,36 +121,68 @@ const modalOpen = ref<boolean>(false);
   background-color: rgba(0, 0, 0, 0.5);
 
   #modal {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 1em;
     position: relative;
     background-color: white;
-    padding: 2em;
+    padding: 2em 1em 1em 2em;
+    border-radius: 1em;
     width: 90%;
 
     @media screen and (min-width: 1200px) {
       width: 40%;
-      height: 70%;
     }
 
-    #modalAvatarContainer {
-      border: solid black;
-      width: 200px;
-      height: 200px;
+    #infoSection {
+      @media screen and (min-width: 1200px) {
+        display: flex;
+        align-items: center;
+        gap: 3em;
+      }
 
-      .modalAvatar {
-        width: 100%;
-        object-fit: cover;
+      #modalAvatarContainer {
+        width: 200px;
+        height: 200px;
+
+        .modalAvatar {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .contactLink {
+        text-decoration: none;
+        color: #5333ed;
       }
     }
 
-    .closeButton {
-      cursor: pointer;
-      width: 120px;
-      border: solid black 5px;
-      padding: 1em;
+    #buttonContainer {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+
+      .closeButton {
+        cursor: pointer;
+        border: solid transparent;
+        padding: 1em;
+        display: inline-block;
+        padding: 0.75em 1.5em;
+        font-size: 1em;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-radius: 0.5em;
+        transition: background-color 0.3s transform 0.2s ease;
+      }
+
+      .closeButton:hover {
+        border-color: #5333ed;
+        transform: translateY(-2px);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
     }
   }
 }

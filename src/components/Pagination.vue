@@ -29,32 +29,49 @@ const handleNextPage = () => {
 </script>
 <template>
   <section id="pagination">
-    <button @click="handlePrevPage" :disabled="props.page === 1">
-      Previous Page
-    </button>
-    <span>Page {{ props.page }} of {{ props.total_pages }}</span>
     <button
+      class="pageButton"
+      @click="handlePrevPage"
+      :disabled="props.page === 1"
+    >
+      1
+    </button>
+    <button
+      class="pageButton"
       @click="handleNextPage"
       :disabled="props.page === props.total_pages"
     >
-      Next Page
+      2
     </button>
   </section>
 </template>
 <style scoped>
 #pagination {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  gap: 2em;
+  justify-content: center;
 
   @media screen and (min-width: 1200px) {
-    width: 30%;
+    width: 20%;
   }
 
-  button {
+  .pageButton {
     cursor: pointer;
-    border: solid black;
+    border: solid rgb(215, 215, 215) 1px;
     padding: 1em;
+    display: inline-block;
+    padding: 0.75em 1.5em;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 0.5em;
+    transition: background-color 0.3s transform 0.2s ease;
+  }
+
+  .pageButton:hover {
+    border-color: #5333ed;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 }
 </style>
