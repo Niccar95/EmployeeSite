@@ -39,19 +39,25 @@ const handlePageChange = async (page: number) => {
   ></Pagination>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 header {
+  top: 0;
+  left: 0;
+  position: fixed;
   display: flex;
   align-items: center;
   gap: 5em;
   width: 100%;
+  padding: 2em;
+  @include glassEffect;
 
   img {
-    width: 155px;
+    width: 96px;
   }
 }
 
 h1 {
+  margin-top: 4em;
   text-align: center;
   font-weight: 900;
   text-transform: capitalize;

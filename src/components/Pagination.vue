@@ -45,33 +45,22 @@ const handleNextPage = () => {
     </button>
   </section>
 </template>
-<style scoped>
+<style lang="scss" scoped>
 #pagination {
   display: flex;
   gap: 2em;
   justify-content: center;
 
-  @media screen and (min-width: 1200px) {
+  @include desktop {
     width: 20%;
   }
 
   .pageButton {
-    cursor: pointer;
-    border: solid rgb(215, 215, 215) 1px;
-    padding: 1em;
-    display: inline-block;
-    padding: 0.75em 1.5em;
-    font-size: 1em;
-    font-weight: bold;
-    text-transform: uppercase;
-    border-radius: 0.5em;
-    transition: background-color 0.3s transform 0.2s ease;
+    @include primaryButton;
   }
 
   .pageButton:hover {
-    border-color: #5333ed;
-    transform: translateY(-2px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    @include primaryButtonHover;
   }
 }
 </style>

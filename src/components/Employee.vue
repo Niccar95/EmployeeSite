@@ -42,7 +42,7 @@ const modalOpen = ref<boolean>(false);
         </figure>
 
         <section id="linkContainer">
-          <h3 id="contact">Contact me at:</h3>
+          <h3 class="contact">Contact me at:</h3>
           <a class="contactLink" :href="'mailto:' + props.email">{{
             props.email
           }}</a>
@@ -63,7 +63,7 @@ const modalOpen = ref<boolean>(false);
   gap: 1em;
   text-align: center;
   padding: 2em;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: $shadow;
   border-radius: 1em;
   cursor: pointer;
   transition: background-color 0.2s ease;
@@ -131,13 +131,14 @@ const modalOpen = ref<boolean>(false);
     padding: 2em 1em 1em 2em;
     border-radius: 1em;
     width: 90%;
+    box-shadow: $shadow;
 
-    @media screen and (min-width: 1200px) {
+    @include desktop {
       width: 40%;
     }
 
     #infoSection {
-      @media screen and (min-width: 1200px) {
+      @include desktop {
         display: flex;
         align-items: center;
         gap: 3em;
@@ -154,9 +155,23 @@ const modalOpen = ref<boolean>(false);
         }
       }
 
-      .contactLink {
-        text-decoration: none;
-        color: #5333ed;
+      #linkContainer {
+        padding: 0.5em;
+
+        .contact {
+          font-weight: bold;
+        }
+        .contactLink {
+          text-decoration: none;
+          padding-bottom: 0.5em;
+          border-bottom: 2px solid transparent;
+          color: #5333ed;
+          transition: border-bottom-color 0.2s ease-in;
+        }
+
+        .contactLink:hover {
+          border-bottom-color: #5333ed;
+        }
       }
     }
 
@@ -166,22 +181,11 @@ const modalOpen = ref<boolean>(false);
       width: 100%;
 
       .closeButton {
-        cursor: pointer;
-        border: solid transparent;
-        padding: 1em;
-        display: inline-block;
-        padding: 0.75em 1.5em;
-        font-size: 1em;
-        font-weight: bold;
-        text-transform: uppercase;
-        border-radius: 0.5em;
-        transition: background-color 0.3s transform 0.2s ease;
+        @include primaryButton;
       }
 
       .closeButton:hover {
-        border-color: #5333ed;
-        transform: translateY(-2px);
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        @include primaryButtonHover;
       }
     }
   }

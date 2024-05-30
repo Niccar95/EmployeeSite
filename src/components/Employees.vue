@@ -21,7 +21,7 @@ const props = defineProps<EmployeesProp>();
     ></Employee>
   </section>
 </template>
-<style scoped>
+<style lang="scss" scoped>
 #employeeSection {
   border: solid rgb(229, 229, 229) 1px;
   border-radius: 1em;
@@ -32,7 +32,7 @@ const props = defineProps<EmployeesProp>();
   justify-content: center;
   gap: 2em;
 
-  @media screen and (min-width: 1200px) {
+  @include desktop {
     width: 70%;
     flex-direction: row;
     flex-wrap: wrap;
