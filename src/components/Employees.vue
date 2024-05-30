@@ -23,7 +23,6 @@ const props = defineProps<EmployeesProp>();
 </template>
 <style lang="scss" scoped>
 #employeeSection {
-  border: solid rgb(229, 229, 229) 1px;
   border-radius: 1em;
   padding: 2em;
   display: flex;
@@ -31,6 +30,7 @@ const props = defineProps<EmployeesProp>();
   align-items: center;
   justify-content: center;
   gap: 2em;
+  background-color: white;
 
   @include desktop {
     width: 70%;

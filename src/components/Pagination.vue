@@ -50,6 +50,7 @@ const handleNextPage = () => {
   display: flex;
   gap: 2em;
   justify-content: center;
+  padding: 2em;
 
   @include desktop {
     width: 20%;

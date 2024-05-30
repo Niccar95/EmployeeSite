@@ -62,6 +62,7 @@ const modalOpen = ref<boolean>(false);
   align-items: center;
   gap: 1em;
   text-align: center;
+  width: 100%;
   padding: 2em;
   box-shadow: $shadow;
   border-radius: 1em;
