@@ -30,12 +30,17 @@ const handlePageChange = async (page: number) => {
 
     <div id="introSection">
       <h1 class="mainHeading">Meet our Team</h1>
-      <button>Meet us</button>
+      <p class="introduction">
+        we pride ourselves on our team of highly skilled and dedicated web
+        developers. Our team is composed of professionals with diverse expertise
+        in various web technologies and development practices.
+      </p>
+      <a href="#employeeSection"><button>Meet us</button></a>
     </div>
   </header>
 
-  <h2>Development Team</h2>
-  <Employees :data="employeeState.data"></Employees>
+  <h2 class="devHeading">Development Team</h2>
+  <Employees id="employeeSection" :data="employeeState.data"></Employees>
   <Pagination
     :page="employeeState.page"
     :per_page="employeeState.per_page"
@@ -54,10 +59,10 @@ const handlePageChange = async (page: number) => {
   justify-content: center;
   align-items: center;
   background-image: linear-gradient(
-      to bottom,
-      rgba(229, 229, 229, 0.25),
-      // Darker shade of black
-      rgba(0, 0, 0, 0.4) // Lighter shade of black
+      to top,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.6),
+      rgba(229, 229, 229, 0.4)
     ),
     url("../assets/img/startup-594090.jpg");
   background-position: center;
@@ -72,7 +77,7 @@ const handlePageChange = async (page: number) => {
     gap: 5em;
     width: 100%;
     padding: 2em;
-    @include glassEffect;
+    @include glass-effect;
 
     img {
       width: 96px;
@@ -84,37 +89,66 @@ const handlePageChange = async (page: number) => {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 3em;
-    width: 70%;
+    gap: 1em;
+    width: 100%;
+
+    @include tablet {
+      width: 75%;
+      align-items: center;
+      gap: 2em;
+    }
 
     @include desktop {
+      width: 60%;
       align-items: center;
+      gap: 2em;
     }
 
     .mainHeading {
+      font-family: $heading-font-family;
       text-align: start;
-      font-size: 3em;
-      color: white;
-      font-weight: 900;
-      text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+      font-size: 2.5em;
+      color: $secondary-text-color;
+      font-weight: $heading-font-weight;
+
+      @include tablet {
+        font-size: 4.5em;
+      }
 
       @include desktop {
         font-size: 4.5em;
       }
     }
+
+    .introduction {
+      color: $secondary-text-color;
+      line-height: 1.8em;
+      font-weight: 500;
+      font-size: $base-font-size;
+      margin-bottom: 2em;
+
+      @include tablet {
+        font-size: 1.4em;
+      }
+
+      @include desktop {
+        font-size: 1.4em;
+      }
+    }
+
     button {
-      @include primaryButton;
-      background-color: rgb(231, 231, 231);
+      @include primary-button;
     }
 
     button:hover {
-      @include primaryButtonHover;
+      @include primary-button-hover;
     }
   }
 }
 
-h2 {
+.devHeading {
+  font-family: $heading-font-family;
   text-align: center;
-  font-weight: 900;
+  font-weight: $heading-font-weight;
 }
 </style>

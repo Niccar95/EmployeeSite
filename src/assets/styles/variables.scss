@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+
 //Breakpoints:
 
 $tablet: 768px;
@@ -12,9 +14,23 @@ $shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 //Colors:
 
 $primary-color: white;
+$accent-color: #0e53b9;
+$body-background: linear-gradient(135deg, #f6f8fa, #e9ecef);
+$primary-hover-color: whitesmoke;
+$secondary-hover-color: #1d4787;
+
+$primary-text-color: black;
+$secondary-text-color: white;
+$tertiary-text-color: #454545;
+
+$link-color: #5333ed;
 
 //Typography:
 
+$heading-font-family: "Roboto Condensed", sans-serif;
 $base-font-family: "Noto Sans", sans-serif;
 $base-font-size: 16px;
 $heading-font-size: 32px;
+
+$base-font-weight: normal;
+$heading-font-weight: bold;

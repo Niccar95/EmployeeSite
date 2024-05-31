@@ -23,20 +23,26 @@ const props = defineProps<EmployeesProp>();
 </template>
 <style lang="scss" scoped>
 #employeeSection {
-  border-radius: 1em;
   padding: 2em;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 2em;
-  background-color: white;
+  background-color: $primary-color;
+
+  @include tablet {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3em;
+  }
 
   @include desktop {
     width: 70%;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 3em;
+    border-radius: 1em;
   }
 }
 </style>

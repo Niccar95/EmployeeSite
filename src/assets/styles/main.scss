@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   gap: 2em;
-  background: linear-gradient(135deg, #f6f8fa, #e9ecef);
+  background: $body-background;
 
   @include desktop {
     align-items: center;

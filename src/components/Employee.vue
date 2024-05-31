@@ -30,7 +30,7 @@ const modalOpen = ref<boolean>(false);
       <img class="employeeAvatar" :src="props.avatar" alt="avatar" />
     </figure>
 
-    <h3>{{ props.first_name + " " + props.last_name }}</h3>
+    <h3 class="avatarName">{{ props.first_name + " " + props.last_name }}</h3>
     <img class="contactIcon" src="./icons/envelope-solid.svg" />
   </article>
 
@@ -69,9 +69,12 @@ const modalOpen = ref<boolean>(false);
   cursor: pointer;
   transition: background-color 0.2s ease;
 
+  @include tablet {
+    width: 400px;
+  }
+
   @include desktop() {
     width: 400px;
-    align-items: center;
   }
 
   #avatarContainer {
@@ -94,11 +97,11 @@ const modalOpen = ref<boolean>(false);
 
   &:hover #avatarContainer {
     border: solid;
-    border-color: #5333ed;
+    border-color: #2e92fb;
   }
 
-  h3 {
-    color: #5333ed;
+  .avatarName {
+    color: $tertiary-text-color;
   }
 
   .contactIcon {
@@ -107,7 +110,7 @@ const modalOpen = ref<boolean>(false);
 }
 
 #employeeCard:hover {
-  background-color: whitesmoke;
+  background-color: $primary-hover-color;
 }
 
 #modalBackground {
@@ -126,19 +129,29 @@ const modalOpen = ref<boolean>(false);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 1em;
+    gap: 2em;
     position: relative;
-    background-color: white;
+    background-color: $primary-color;
     padding: 2em 1em 1em 2em;
     border-radius: 1em;
     width: 90%;
     box-shadow: $shadow;
+
+    @include tablet {
+      width: 60%;
+    }
 
     @include desktop {
       width: 40%;
     }
 
     #infoSection {
+      @include tablet {
+        display: flex;
+        align-items: center;
+        gap: 3em;
+      }
+
       @include desktop {
         display: flex;
         align-items: center;
@@ -166,12 +179,12 @@ const modalOpen = ref<boolean>(false);
           text-decoration: none;
           padding-bottom: 0.5em;
           border-bottom: 2px solid transparent;
-          color: #5333ed;
+          color: $link-color;
           transition: border-bottom-color 0.2s ease-in;
         }
 
         .contactLink:hover {
-          border-bottom-color: #5333ed;
+          border-bottom-color: $link-color;
         }
       }
     }
@@ -182,11 +195,11 @@ const modalOpen = ref<boolean>(false);
       width: 100%;
 
       .closeButton {
-        @include primaryButton;
+        @include primary-button;
       }
 
       .closeButton:hover {
-        @include primaryButtonHover;
+        @include primary-button-hover;
       }
     }
   }

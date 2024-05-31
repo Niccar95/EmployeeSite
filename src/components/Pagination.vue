@@ -57,11 +57,11 @@ const handleNextPage = () => {
   }
 
   .pageButton {
-    @include primaryButton;
+    @include secondary-button;
   }
 
   .pageButton:hover {
-    @include primaryButtonHover;
+    @include secondary-button-hover;
   }
 }
 </style>

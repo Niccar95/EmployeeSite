@@ -1,8 +1,11 @@
 * {
   box-sizing: border-box;
+  padding: 0;
   margin: 0;
-  font-weight: normal;
+  font-weight: $base-font-weight;
   font-family: $base-font-family;
+  scroll-behavior: smooth;
+  scroll-margin-top: 200px;
 }
 
 body {
