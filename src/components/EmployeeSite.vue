@@ -85,7 +85,7 @@ const handlePageChange = async (page: number) => {
   }
 
   #introSection {
-    padding: 1em;
+    padding: 2em;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
